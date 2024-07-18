@@ -95,6 +95,13 @@ class DQNAgent:
     def update_target_model(self) -> None:
         self.target_model.load_state_dict(self.model.state_dict())
 
+    def save(self, filepath: str) -> None:
+        torch.save(self.model.state_dict(), filepath)
+
+    def load(self, filepath: str) -> None:
+        self.model.load_state_dict(torch.load(filepath))
+        self.model.to(self.device)
+
 
 def train_dqn_agent(
     episodes: int = 10000, max_steps: int = 1000, batch_size: int = 32
@@ -129,6 +136,7 @@ def train_dqn_agent(
                 f"Episode {episode}, Score: {game.score}, Total Reward: {total_reward}"
             )
 
+    agent.save("dqn_snake_model.pth")
     return agent
 
 
