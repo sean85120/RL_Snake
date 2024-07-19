@@ -99,7 +99,7 @@ class DQNAgent:
         torch.save(self.model.state_dict(), filepath)
 
     def load(self, filepath: str) -> None:
-        self.model.load_state_dict(torch.load(filepath))
+        self.model.load_state_dict(torch.load(filepath, map_location=self.device))
         self.model.to(self.device)
 
 
