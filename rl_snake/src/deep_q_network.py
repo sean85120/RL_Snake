@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from rl_snake.snake_game import WINDOW_HEIGHT, WINDOW_WIDTH, Color, SnakeGame
+from rl_snake.src.snake_game import WINDOW_HEIGHT, WINDOW_WIDTH, Color, SnakeGame
 
 
 class DQN(nn.Module):
