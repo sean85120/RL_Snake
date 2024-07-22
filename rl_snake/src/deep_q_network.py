@@ -178,4 +178,3 @@ def play_game_with_dqn_agent(agent: DQNAgent, fps: int = 10) -> None:
 
 if __name__ == "__main__":
     trained_agent = train_dqn_agent(episodes=10000)
-    play_game_with_dqn_agent(trained_agent)
