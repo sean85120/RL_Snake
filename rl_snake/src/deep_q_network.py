@@ -1,3 +1,4 @@
+import datetime
 import random
 from collections import deque
 from typing import Deque, Tuple
@@ -136,7 +137,7 @@ def train_dqn_agent(
                 f"Episode {episode}, Score: {game.score}, Total Reward: {total_reward}"
             )
 
-    agent.save("dqn_snake_model.pth")
+    agent.save(f"dqn_snake_model_{datetime.datetime.now()}.pth")
     return agent
 
 
